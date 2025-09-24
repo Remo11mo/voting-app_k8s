@@ -112,8 +112,4 @@ To remove all resources related to this application:
 kubectl delete all --all -n voting-app
 kubectl delete namespace voting-app
 ```
-    V --> REDIS
-    REDIS --> W
-    W --> DB
-    DB --> R
-    R --> U
+    
