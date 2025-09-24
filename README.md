@@ -112,30 +112,6 @@ To remove all resources related to this application:
 kubectl delete all --all -n voting-app
 kubectl delete namespace voting-app
 ```
-## Architecture
-
-```mermaid
-flowchart TD
-    subgraph User
-        U[User Browser]
-    end
-
-    subgraph Frontend
-        V[Vote App\n(NodePort :30001)]
-        R[Result App\n(NodePort :30002)]
-    end
-
-    subgraph Backend
-        W[Worker\n(Background Service)]
-    end
-
-    subgraph Data
-        REDIS[(Redis\nIn-memory Cache)]
-        DB[(Postgres\nPersistent Database)]
-    end
-
-    %% Flow
-    U --> V
     V --> REDIS
     REDIS --> W
     W --> DB
